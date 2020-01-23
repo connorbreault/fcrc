@@ -1,0 +1,20 @@
+body { 
+    background: black;
+    background: url(./background.png) no-repeat; 
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed
+}
+.mainContainer{
+    width: 75%;
+    margin: 25px auto
+}
+#fileInput{
+    width: 50%;
+    margin: auto
+}
+#fileButton{
+    background: #91d68b;
+    border: 2px solid #671c44;
+    border-radius: 10px
+}
