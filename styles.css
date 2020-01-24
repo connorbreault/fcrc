@@ -9,12 +9,29 @@ body {
     width: 75%;
     margin: 25px auto
 }
+#fcrcHeader{
+    font-family: 'Cinzel', serif;
+    color: #91d68b;
+    text-shadow: 5px 5px 5px #842457;
+}
 #fileInput{
     width: 50%;
     margin: auto
 }
-#fileButton{
+#textarea{
+    color: white;
+    text-align: center
+}
+#fileButton, #sendButton{
     background: #91d68b;
     border: 2px solid #671c44;
     border-radius: 10px
+}
+#fileButton:hover{
+    background: #671c44;
+    border: 2px solid #91d68b;
+}
+#sendButton:hover{
+    background: #671c44;
+    border: 2px solid #91d68b;
 }
