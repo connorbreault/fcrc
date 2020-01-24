@@ -12,3 +12,9 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database()
+
+$("#sendButton").on("click", function () {
+    // let emailImg = $("fileinput").val()
+    let emailContents = $("#textarea").val()
+    alert(emailContents)
+})
