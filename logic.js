@@ -21,24 +21,29 @@ database.ref().on("child_added", function (snapshot) {
 
 $("#sendButton").on("click", function () {
     // let emailImg = $("fileinput").val()
-    // let emailContents = $("#textarea").val()
+    let emailContents = $("#textarea").val()
+    $(".inputDiv").addClass("hide")
+    $(".sendingDiv").removeClass("hide")
+
+    let messageNum = 1
+    let messageTotal = memberDB.length
 
     for (let i = 0; i < memberDB.length; i++) {
-        alert(memberDB[i])
+        let member = memberDB[i]
+        var templateParams = {
+            member: member,
+            emailContents: emailContents
+        }
+
+        emailjs.send('default_service', 'template_b4MmI7CD', templateParams)
+            .then(function (response) {
+                console.log('Sucessful message send!')
+                $("#currentSend").html(messageNum)
+                $("#totalSend").html(messageTotal)
+                messageNum++
+            }, function (error) {
+                alert('FAILED...', error)
+                $(".errorDiv").removeClass("hide")
+            });
     }
-
-    // var templateParams = {
-    //     emailContents: emailContents
-    // }
-
-    // emailjs.send('default_service', 'template_b4MmI7CD', templateParams)
-    //     .then(function (response) {
-    //         alert('Sucessful message send!')
-    //         // $(".loadingGif").addClass("hidden")
-    //         // $("#thanksMessage").removeClass("hidden")
-    //     }, function (error) {
-    //         alert('FAILED...', error)
-    //         // $(".loadingGif").addClass("hidden")
-    //         // $("#errorMessage").removeClass("hidden")
-    //     });
 })

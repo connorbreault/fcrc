@@ -42,29 +42,39 @@
 
         <h2 class="center-align" id="fcrcHeader">Flub Club Rub Hub</h2>
 
-        <form action="#">
-            <div class="file-field input-field" id="fileInput">
-                <div class="btn" id="fileButton">
-                    <span>File</span>
-                    <input type="file">
+        <div class="inputDiv">
+            <form action="#">
+                <div class="file-field input-field" id="fileInput">
+                    <div class="btn" id="fileButton">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
-            </div>
-        </form>
+            </form>
 
-        <div class="row">
-            <div class="input-field col s12 center-align">
-                <textarea id="textarea" class="materialize-textarea"></textarea>
-                <label for="textarea">Email contents</label>
+            <div class="row">
+                <div class="input-field col s12 center-align">
+                    <textarea id="textarea" class="materialize-textarea"></textarea>
+                    <label for="textarea">Email contents</label>
+                </div>
             </div>
+
+
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="sendButton">Send
+                <i class="material-icons right">send</i>
+            </button>
         </div>
-
-
-        <button class="btn waves-effect waves-light" type="submit" name="action" id="sendButton">Send
-            <i class="material-icons right">send</i>
-        </button>
+        <div class="sendingDiv container hide">
+            <h4><span id="currentSend"></span> of <span id="totalSend"></span> sent</h4>
+            <button class="btn waves-effect waves-light" id="okaySend">Okay</button>
+        </div>
+        <div class="errorDiv hide">
+            <h4>Error occured...</h4>
+            <button class="btn waves-effect waves-light" id="errorSend">Okay</button>
+        </div>
 
     </div>
 
