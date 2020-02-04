@@ -13,22 +13,32 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database()
 
+
+let memberDB = []
+database.ref().on("child_added", function (snapshot) {
+    memberDB.push(snapshot.val().email)
+})
+
 $("#sendButton").on("click", function () {
     // let emailImg = $("fileinput").val()
-    let emailContents = $("#textarea").val()
-    alert(emailContents)
+    // let emailContents = $("#textarea").val()
 
-    let templateParams = {
-        emailContents: emailContents
+    for (let i = 0; i < memberDB.length; i++) {
+        alert(memberDB[i])
     }
-    emailjs.send('default_service', 'template_b4MmI7CD', templateParams)
-        .then(function (response) {
-            console.log('Sucessful message send!')
-            $(".loadingGif").addClass("hidden")
-            $("#thanksMessage").removeClass("hidden")
-        }, function (error) {
-            console.log('FAILED...', error)
-            $(".loadingGif").addClass("hidden")
-            $("#errorMessage").removeClass("hidden")
-        });
+
+    // var templateParams = {
+    //     emailContents: emailContents
+    // }
+
+    // emailjs.send('default_service', 'template_b4MmI7CD', templateParams)
+    //     .then(function (response) {
+    //         alert('Sucessful message send!')
+    //         // $(".loadingGif").addClass("hidden")
+    //         // $("#thanksMessage").removeClass("hidden")
+    //     }, function (error) {
+    //         alert('FAILED...', error)
+    //         // $(".loadingGif").addClass("hidden")
+    //         // $("#errorMessage").removeClass("hidden")
+    //     });
 })
