@@ -17,6 +17,7 @@ var database = firebase.database()
 let memberDB = []
 database.ref().on("child_added", function (snapshot) {
     memberDB.push(snapshot.val().email)
+    $(".subList").append("<li class='subs'>" + snapshot.val().email + "</li>")
 })
 
 $("#sendButton").on("click", function () {
