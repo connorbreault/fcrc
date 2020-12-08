@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
     <!-- Import Google Icon Font -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
 
     <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-        (function () {
-            emailjs.init("user_exTPcRnha9vQIdETw7jLn");
-        })();
+      (function () {
+        emailjs.init("user_exTPcRnha9vQIdETw7jLn");
+      })();
     </script>
 
     <title>Flub Club Rub Hub</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="mainContainer center-align">
+      <img src="./logo.png" alt="Flub" style="width: 50%" />
 
-        <img src="./logo.png" alt="Flub" style="width: 50%">
+      <h2 class="center-align fcrcHeader">Flub Club Rub Hub</h2>
 
-        <h2 class="center-align fcrcHeader">Flub Club Rub Hub</h2>
-
-        <div class="inputDiv">
-            <!-- <form action="#">
-                <div class="file-field input-field" id="fileInput">
-                    <div class="btn" id="fileButton">
-                        <span>File</span>
-                        <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-            </form> -->
-
-            <div class="row">
-                <div class="input-field col s12 center-align">
-                    <textarea id="textarea" class="materialize-textarea"></textarea>
-                    <label for="textarea">Email contents</label>
-                </div>
-            </div>
-
-
-            <button class="btn waves-effect waves-light" type="submit" name="action" id="sendButton">Send
-                <i class="material-icons right">send</i>
-            </button>
+      <div class="inputDiv">
+        <div class="row">
+          <div class="input-field col s12 center-align">
+            <textarea id="textarea" class="materialize-textarea"></textarea>
+            <label for="textarea">Email contents</label>
+          </div>
         </div>
-        <div class="sendingDiv container hide">
-            <h4><span id="currentSend"></span> of <span id="totalSend"></span> sent</h4>
-            <button class="btn waves-effect waves-light" id="okaySend">Okay</button>
-        </div>
-        <div class="errorDiv hide">
-            <h4>Error occured...</h4>
-            <button class="btn waves-effect waves-light" id="errorSend">Okay</button>
-        </div>
+
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          id="sendButton"
+        >
+          Send
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+      <div class="sendingDiv container hide">
+        <h4>
+          <span id="currentSend"></span> of <span id="totalSend"></span> sent
+        </h4>
+        <button class="btn waves-effect waves-light" id="okaySend">Okay</button>
+      </div>
+      <div class="errorDiv hide">
+        <h4>Error occured...</h4>
+        <button class="btn waves-effect waves-light" id="errorSend">
+          Okay
+        </button>
+      </div>
     </div>
     <div class="subscribers center-align">
-        <h3 class="fcrcHeader">Subscribers</h3>
-        <ul class="subList">
-        </ul>
+      <h3 class="fcrcHeader">Subscribers</h3>
+      <ul class="subList"></ul>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./logic.js"></script>
-</body>
-
+  </body>
 </html>
